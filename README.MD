@@ -8,7 +8,7 @@
 # Check whether the processor supports AVX2 instruction set
 # You should see some outputs. No output means AVX2 is not supported by the processor you are using.
 cat /proc/cpuinfo | grep -i avx2
-# Build use g++
+# Build using g++
 g++ *.cpp  -m64 -I${MKLROOT}/include -O3 -mavx2 -fopenmp -L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 # Run the code
 # ./a.out [N]
